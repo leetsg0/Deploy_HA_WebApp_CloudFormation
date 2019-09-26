@@ -9,7 +9,7 @@ There are 2 CloudFormation scripts that:
 1. Creates the infrastructure stack
 1. Creates and deploys the web application servers
 
-It must created in that order.  The create scripts are in .bat (batch) format and was run in a Windows environment.
+It must be created in that order.  The create scripts are in .bat (batch) format and was ran in a Windows environment.
 
 First, create the infrastructure by running:
 > .\create infrastack networkinfra.yml networkinfra-params.json
