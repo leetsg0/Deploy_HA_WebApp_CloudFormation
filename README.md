@@ -5,6 +5,7 @@ The diagram below depicts the network infrastructure and AWS services used for t
 ![Network Diagram](/images/Project-2-Diagram.jpg)
 
 **Instructions**
+
 There are 2 CloudFormation scripts that:
 1. Creates the infrastructure stack
 1. Creates and deploys the web application servers
@@ -18,3 +19,14 @@ Check the AWS CloudFormation command console and verify that the infrastack was 
 
 Next, create and deploy the servers by running:
 > .\create serverstack deployservers.yml server-params.json
+
+Check AWS command console, under CloudFormation to see that the infrastack and serverstack have been created and is complete, free from any errors.
+
+**Delete Stacks After Creation and Verification**
+
+Run the following destroy batch commands to delete each stack in the following order.  The first stack must be completely deleted prior deleting the second stack.  This can be checked in your AWS command console, under CloudFormation:
+
+> .\destroy serverstack
+
+> .\destroy infrastack
+
