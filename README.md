@@ -12,19 +12,19 @@ There are 2 CloudFormation scripts that:
 
 It must be created in that order.  The create scripts are in .bat (batch) format and was ran in a Windows environment.
 
-First, create the infrastructure by running:
+First, create the infrastructure by running the command below.  In this example, I'll call the stack as 'infrastack' but it can be any unique, identifiable stack name of choice.
 > .\create infrastack networkinfra.yml networkinfra-params.json
 
 Check the AWS CloudFormation command console and verify that the infrastack was created and completed before proceeding to the next step.
 
-Next, create and deploy the servers by running:
+Next, create and deploy the servers by running the command below.  In this example, I'll call the stack as 'serverstack' but it can be any unique, identifiable stack name of choice.
 > .\create serverstack deployservers.yml server-params.json
 
 Check AWS command console, under CloudFormation to see that the infrastack and serverstack have been created and is complete, free from any errors.
 
 **Delete Stacks After Creation and Verification**
 
-Run the following destroy batch commands to delete each stack in the following order.  The first stack must be completely deleted prior deleting the second stack.  This can be checked in your AWS command console, under CloudFormation:
+Run the following destroy batch commands to delete each stack in the following order.  The first stack must be completely deleted prior deleting the second stack.  This can be checked in your AWS command console, under CloudFormation.  These steps are optional, but may be necessary to avoid recurring costs from AWS from unused stacks.
 
 > .\destroy serverstack
 
