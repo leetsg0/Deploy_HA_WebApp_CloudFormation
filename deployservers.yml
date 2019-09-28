@@ -80,8 +80,7 @@ Resources:
                     -   s3:Get*
                     -   s3:List*
                     Resource: 
-                    -   arn:aws:s3:::udacity-demo-1
-                    -   arn:aws:s3:::udacity-demo-1/*
+                    -   arn:aws:s3:::myudacity-website/*
             Roles:
             -   Ref: RootRole
     RootInstanceProfile:
@@ -101,10 +100,10 @@ Resources:
                     apt-get update -y
                     apt-get install unzip awscli -y
                     apt-get install apache2 -y
-                    systemctl start apache2.service
+                    systemctl start apache2
+                    systemctl enable apache2
                     cd /var/www/html
-                    aws s3 cp s3://udacity-demo-1/udacity.zip .
-                    unzip -o udacity.zip
+                    aws s3 cp s3://myudacity-website/index.html .
             ImageId: ami-06f2f779464715dc5
             IamInstanceProfile: !Ref RootInstanceProfile
             SecurityGroups:
